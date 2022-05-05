@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+.container-body {
+    width: 100%;
+    height: 100vh;
+    background-color: #12121f;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 30px; */
+}
+
+.calendar {
+    width: 50%;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.header {
+    background-color: #0b9b94;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    padding: 40px 40px 5px 40px;
+}
+.btn-size{
+    width: 150px;
+    height: 60px;
+    background-color: #12121f;
+}
+.btn-100 {
+    width: 100px;
+    height: 40px;
+    background-color: #12121f;
+}
+.btn-color{
+    width: 100px;
+    height: 40px;
+    background-color: #12121f;
+    border: 1px solid #0b9b94;
+}
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.month {
+    color: #12121f;
+}
+
+.month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.month h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+.weekdays div {
+    font-size: 140%;
+    color: #0b9b94;
+    font-size: 2rem;
+    font-weight: 400;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+.prev-date,
+.next-date {
+    color: white;
+    opacity: 0.2;
+}
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.days div {
+    font-size: 1.4rem;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+ }
+.color-red {
+    color: red;
+}
+.today {
+    background-color: #0b9b94;
+}
+.todayByYear {
+    background-color: #0b9b94;
+    border-radius: 10px;
+}
+.inputField button {
+    cursor: pointer;
+    background-color: #12121f;
+    width: 90px;
+    height: 40px;
+}
+.inputField input {
+    padding: 5px;
+    color: #12121f;
+}
+.inputField label {
+    font-size: 150%;
+}
+.showTask i {
+    font-size: 200%;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+.todoList li {
+    position: relative;
+    list-style: none;
+    height: 60px;
+    width: 500px;
+    margin-left: -30px;
+    background: #12121f;
+    color: #a8b2c4;
+    padding: 0 15px;
+    line-height: 60px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: default;
+    overflow: hidden;
+  }
+.todoList li i {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+  }
+.todoList li:hover i {
+    right: 5px;
+}
+.btnEdit {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3 ease;
+    background-color:#12121f;
+    border: none;
+}
+.btnEdit:hover {
+    right: 35px;
+}
+.showTask {
+    margin:  0 auto;
+    width: 50%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#0b9b94;
+    border-radius: 24px;
+    padding: 10px 60px 60px 60px;
+    position: relative;
+}
+.showTask h1 {
+    font-size: 300%;
+    font-weight: 600;
+}
+.showTask p {
+    font-size: 150%;
+    font-weight: 400;
+}
+
+.modalAdd {
+    position: fixed;
+    width: 100%;
+    z-index: 1; /* Ưu tiên hiển thị trên cùng */
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    /* background-color: rgb(0, 0, 0); */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modalLogin {
+    position: fixed;
+    width: 100%;
+    z-index: 1; /* Ưu tiên hiển thị trên cùng */
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    background-color: #12121f;
+    /* background-color: rgb(0, 0, 0); */
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+.task-menu {
+    list-style: none;
+    font-size: 50%;
+}
+
+.task-menu-day {
+    list-style: none;
+    font-size: 60%;
+}
+.task-menu-day li {
+    border: 1px solid white;
+    margin: 5px;
+    border-radius: 15px;
+}
+.task-menu li {
+    border: 1px solid none;
+    margin: 5px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: -30px;
+}
+.border-day {
+    cursor: pointer;
+    color: #fff;
+}
+.calendarByYear {
+    background-color:#12121f;
+    width: 100%;
+    height: 100%;
+    position: fixed; /* vị trí cố định */
+    overflow: auto;
+    left: 0;
+    top: 0;
+    color:  white;
+}
+
+.monthByYear {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    font-size: 120%;
+    color: #12121f;
+}
+.dayss {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+    color:#0b9b94;
+    font-size: 120%;
+    padding: 0px;
+}
+.dayss div {
+    margin: 3px;
+}
+.grid-calendar {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background-color: #12121f;
+    margin: 0 auto;
+}
+
+.monthbyyear {
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    text-align: center;
+}
+.monthStyle {
+    font-size: 180%;
+    font-weight: 600;
+    color:#0b9b94;
+    margin-bottom: 10px;
+}
+.height {
+    height: 130px;
+    /* width: 152px; */
+}
+.yearNext {
+    width: 50%;
+    margin:  0 auto;
+    color:  white;
+}
+.yearNext i {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.border-radius {
+    border-radius: 14px;
+    cursor: pointer;
+}
+.Year h1 {
+    cursor: pointer;
+    font-weight: 700;
+}
+.required {
+    color: red;
+}
+.errRequired {
+    color: red;
+    font-size: 50%;
+    width: 300px;
+    text-align: center;
+}
+.more {
+    border: 1px solid white;
+}
